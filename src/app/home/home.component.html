@@ -18,7 +18,13 @@
           <button (click)="eliminarUsuario(i)">Eliminar</button>
         </div>
       </div>
+<<<<<<< HEAD
+      <ng-template #noUsers>
+        <p>No hay usuarios registrados.</p>
+      </ng-template>
+=======
       <ng-template #noUsers><p>No hay usuarios registrados.</p></ng-template>
+>>>>>>> origin/main
 
       <hr />
 
@@ -26,6 +32,48 @@
       <button (click)="generarTurnos()">🟥 GENERAR TURNOS 14 DÍAS</button>
 
       <div *ngIf="turnos && turnos.length; else noTurnos">
+<<<<<<< HEAD
+        <!-- 🔸 Agrupar por fecha -->
+        <div class="dias-container">
+          <div
+            class="dia-card"
+            *ngFor="let fecha of obtenerFechasUnicas()"
+            (click)="toggleFecha(fecha)"
+          >
+            <h4>{{ fecha | date: 'fullDate' }}</h4>
+
+            <div
+              class="turnos-list"
+              *ngIf="fechaSeleccionada === fecha"
+            >
+              <div
+                class="turno-card"
+                *ngFor="let t of obtenerTurnosPorFecha(fecha); let i = index"
+              >
+                <p><strong>Hora:</strong> {{ t.hora }}</p>
+                <p><strong>Especialidad:</strong> {{ t.especialidad }}</p>
+                <p><strong>Estado:</strong> {{ t.estado }}</p>
+
+                <div class="btns-turno">
+                  <button (click)="editarCampo(i, 'hora'); $event.stopPropagation()">⏰</button>
+                  <button (click)="editarCampo(i, 'especialidad'); $event.stopPropagation()">🩺</button>
+                  <button (click)="editarCampo(i, 'estado'); $event.stopPropagation()">🔁</button>
+                  <button (click)="eliminarTurno(i); $event.stopPropagation()">🗑️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-delete-all" (click)="eliminarTodosTurnos()">
+          🗑️ Eliminar todos los turnos
+        </button>
+      </div>
+
+      <ng-template #noTurnos>
+        <p>No hay turnos generados.</p>
+      </ng-template>
+=======
         <div class="turno-card" *ngFor="let t of turnos; let i = index">
           <h4>{{ t.fecha }} - {{ t.hora }}</h4>
           <p>{{ t.especialidad }}</p>
@@ -41,13 +89,17 @@
       </div>
 
       <ng-template #noTurnos><p>No hay turnos generados.</p></ng-template>
+>>>>>>> origin/main
     </section>
 
     <!-- 🔹 PACIENTE -->
     <section *ngIf="usuario?.rol === 'paciente'">
       <button (click)="irASolicitar()">🩺 Solicitar turno</button>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main
       <div *ngIf="misTurnos.length; else noMisTurnos">
         <h3>Mis turnos reservados</h3>
         <div class="turno-card" *ngFor="let t of misTurnos; let i = index">
@@ -57,7 +109,13 @@
         </div>
       </div>
 
+<<<<<<< HEAD
+      <ng-template #noMisTurnos>
+        <p>No tenés turnos reservados.</p>
+      </ng-template>
+=======
       <ng-template #noMisTurnos><p>No tenés turnos reservados.</p></ng-template>
+>>>>>>> origin/main
     </section>
 
     <!-- 🔹 MÉDICO -->
@@ -69,4 +127,7 @@
     <button (click)="logout()">Cerrar sesión</button>
   </main>
 </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main

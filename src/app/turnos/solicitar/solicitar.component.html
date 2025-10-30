@@ -1,12 +1,34 @@
 <div class="solicitar-container">
   <h1>Solicitar Turno</h1>
 
+<<<<<<< HEAD
+  <!-- 🔹 Filtro por especialidad -->
+  <section>
+    <label for="filtro">Filtrar por especialidad:</label>
+    <select id="filtro" (change)="filtrarPorEspecialidad($event)">
+      <option value="todos">Todas</option>
+      <option *ngFor="let esp of especialidades" [value]="esp">{{ esp }}</option>
+    </select>
+  </section>
+
+  <hr />
+
+  <!-- 🔹 Turnos disponibles -->
+  <section>
+    <h2>Turnos disponibles</h2>
+    <div *ngIf="filtrados.length; else sinTurnos">
+      <div class="turno" *ngFor="let t of filtrados; let i = index">
+        <p><strong>{{ t.fecha }}</strong> - {{ t.hora }}</p>
+        <p>{{ t.especialidad }}</p>
+        <p *ngIf="t.estado === 'disponible'" class="estado disponible">🟢 Disponible</p>
+=======
   <section>
     <h2>Turnos disponibles</h2>
     <div *ngIf="ofertaFiltrada.length; else sinTurnos">
       <div class="turno" *ngFor="let t of ofertaFiltrada; let i = index">
         <p><strong>{{ t.fecha }}</strong> - {{ t.hora }}</p>
         <p>{{ t.especialidad }}</p>
+>>>>>>> origin/main
         <button (click)="reservarTurno(i)">✅ Reservar</button>
       </div>
     </div>
@@ -17,12 +39,20 @@
 
   <hr />
 
+<<<<<<< HEAD
+  <!-- 🔹 Mis turnos reservados -->
+=======
+>>>>>>> origin/main
   <section>
     <h2>Mis turnos reservados</h2>
     <div *ngIf="misTurnos.length; else sinReservas">
       <div class="turno" *ngFor="let t of misTurnos; let i = index">
         <p><strong>{{ t.fecha }}</strong> - {{ t.hora }}</p>
         <p>{{ t.especialidad }}</p>
+<<<<<<< HEAD
+        <p class="estado reservado">🔵 Reservado</p>
+=======
+>>>>>>> origin/main
         <button (click)="cancelarTurno(i)">❌ Cancelar</button>
       </div>
     </div>
@@ -32,6 +62,12 @@
   </section>
 
   <hr />
+<<<<<<< HEAD
+
+  <button (click)="volver()">⬅️ Volver al inicio</button>
+</div>
+=======
   <button (click)="volver()">⬅️ Volver al inicio</button>
 </div>
 
+>>>>>>> origin/main
