@@ -7,7 +7,6 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { SolicitarComponent } from './turnos/solicitar/solicitar.component';
 
-<<<<<<< HEAD
 
 // nuevo es la importacion de firebase
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -17,8 +16,6 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
 
-=======
->>>>>>> origin/main
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +26,6 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
     FormsModule,
   ],
   providers: [
@@ -39,11 +35,6 @@ import { environment } from '../environments/environment';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
   ],
-=======
-    FormsModule
-  ],
-  providers: [],
->>>>>>> origin/main
   bootstrap: [AppComponent]
 })
 export class AppModule { }

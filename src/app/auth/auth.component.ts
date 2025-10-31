@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -22,17 +21,11 @@ interface Usuario {
   rol: string;
   fechaRegistro?: string;
 }
-=======
->>>>>>> origin/main
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-<<<<<<< HEAD
   styleUrls: ['./auth.component.scss'],
-=======
-  styleUrls: ['./auth.component.scss']
->>>>>>> origin/main
 })
 export class AuthComponent {
   loginEmail = '';
@@ -43,7 +36,6 @@ export class AuthComponent {
 
   constructor(private router: Router) {}
 
-<<<<<<< HEAD
   // 🔹 LOGIN
   async login() {
     try {
@@ -125,23 +117,5 @@ export class AuthComponent {
       console.error('❌ Error al registrar usuario:', err);
       alert('Error al registrar: ' + err.message);
     }
-=======
-  login() {
-    const users = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const u = users.find((x: any) => x.email === this.loginEmail && x.password === this.loginPass);
-    if (!u) return alert('Credenciales inválidas');
-    localStorage.setItem('usuarioActual', JSON.stringify(u));
-    this.router.navigate(['/home']);
-  }
-
-  registrar() {
-    if (!this.nombre || !this.regEmail || !this.regPass) return alert('Completar todo');
-    const users = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    if (users.find((x: any) => x.email === this.regEmail)) return alert('Ya existe');
-    const rol = users.length === 0 ? 'admin' : 'paciente';
-    users.push({ nombre: this.nombre, email: this.regEmail, password: this.regPass, rol });
-    localStorage.setItem('usuarios', JSON.stringify(users));
-    alert('Registrado');
->>>>>>> origin/main
   }
 }
